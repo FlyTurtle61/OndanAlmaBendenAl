@@ -1,0 +1,10 @@
+:root{
+    --First: #900C3F;
+    --Second: #C70039;
+    --Third: #F94C10;
+    --Fourth: #F8DE22;
+}
+
+body{
+    color: var(--MenuBackground);
+}
