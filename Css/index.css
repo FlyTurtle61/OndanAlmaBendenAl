@@ -3,8 +3,38 @@
     --Second: #C70039;
     --Third: #F94C10;
     --Fourth: #F8DE22;
+    --BackGroundColor: white;
 }
 
 body{
-    color: var(--MenuBackground);
+    max-width: 100%;
+    min-width: 100%;
+
+    max-height: auto;
+    min-height: auto;
+
+    background-color:var(--BackGroundColor);
+
+    position: relative;
+
+    display: block;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.topmenu{
+    display: flex;
+}
+
+nav{
+    display: flex;
+}
+
+.submenu{
+    display: flex;
 }
