@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/open-sans');
+
 :root{
     --First: #900C3F;
     --Second: #C70039;
@@ -22,7 +24,7 @@
   
   /*Kaydırma çubuğunun içindedki büyük çubuk*/
   ::-webkit-scrollbar-track {
-    background-color: rgb(183, 183, 183);
+    background-color: rgb(225, 225, 225);
   }
   
   /*Kaydırma çubuğunun içindedki küçük çubuk*/
@@ -70,7 +72,6 @@ header{
     
     height: auto;
     
-    background-color: rgb(111, 111, 111);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -83,11 +84,23 @@ header{
     max-height: 5vh;
     min-height: 5vh;
 
-    background-color: #900C3F;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
-    justify-content:space-between;
+    align-items: center;
+}
+
+.topmenu a{
+  list-style: none;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(163, 163, 163);
+}
+
+.topmenu a:hover{
+  color: rgb(131, 128, 128);
 }
 
 nav{
@@ -97,11 +110,128 @@ nav{
     max-height: 15vh;
     min-height: 15vh;
 
-    background-color: #0c907e;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content:space-between;
+}
+
+.logo{
+  max-width: 25%;
+  min-width: 25%;
+
+  max-height: 100%;
+  min-height: 100%;
+}
+
+.logo img{
+  width: 100%;
+  height: 100%;
+}
+
+.searchbar{
+  max-width: 45%;
+  min-width: 45%;
+
+  max-height: 100%;
+  min-height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.searchbar form{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.searchbar form .search,
+.searchbar form .button{
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar form .search{
+  width: 80%;
+}
+.searchbar form .search input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: white;
+}
+
+.searchbar form .button{
+  width: 20%;
+}
+
+.searchbar form .button button{
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  color: var(--ButtonFontColor);
+  transition: all 350ms ease-in-out;
+}
+
+.searchbar form .button button:hover{
+  color: white;
+  background-color: var(--HoverButtonFontColor);
+  height: 105%;
+}
+
+.account{
+  max-width: 25%;
+  min-width: 25%;
+
+  max-height: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account .login,
+.account .basket{
+  display: block;
+  width: 40%;
+  margin: 0 5px;
+  height: 6vh;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition: 350ms ease-in-out all;
+}
+
+.account .login i,
+.account .basket i{
+  margin:0 12px;
+  line-height: 5vh;
+
+}
+
+.account .login:hover,
+.account .basket:hover{
+  background-color: var(--HoverButtonFontColor);
+  border-color: var(--HoverButtonFontColor);
+
+}
+.account .login:hover i,
+.account .login:hover span,
+.account .basket:hover i,
+.account .basket:hover span{
+  color: white;
+
 }
 
 .submenu{
@@ -111,17 +241,54 @@ nav{
     max-height: 10vh;
     min-height: 10vh;
 
-    background-color: #1f0bd1;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content:center;
 }
+.submenu ul{
+  width: 100%;
+  height: 5vh;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: .5px rgba(193, 193, 193, 0.673) solid;
+}
+.submenu li{
+  height: 5vh;
+  margin-left: 30px;
+  list-style: none;
+}
+
+.submenu li a{
+  width: 100%;
+  height: 5vh;
+  display: block;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 5vh;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.submenu li:hover a{
+  color: var(--HoverFontColor);
+  border-bottom: 3px solid var(--HoverFontColor);
+}
 
 main{
     max-width: 80%;
     min-width: 80%;
-
+    position: relative;
     height: auto;
 }
 
@@ -197,12 +364,37 @@ main{
 
 }
 
+.opportunity{
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.opportunity-box{
+  width: 32%;
+  height: 40vh;
+  background-color: black;
+  margin: 10px  0 10px;
+}
+
 footer{
     max-width: 80%;
     min-width: 80%;
 
-    height: 50vh;
-    background-color: aliceblue;
+    height: 100vh;
+    background-color: #900C3F;
+}
+
+.copyright{
+  width: 80%;
+  height: auto;
+  text-align: center;
+  color: white;
+  background-color: #C70039;
 }
 
 
@@ -325,19 +517,3 @@ footer{
     }
   }
 
-  .opportunity{
-    width: 100%;
-    height: auto;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .opportunity-box{
-    width: 32%;
-    height: 40vh;
-    background-color: black;
-    margin: 10px  0 10px;
-  }
