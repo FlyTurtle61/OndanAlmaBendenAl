@@ -3,7 +3,11 @@
     --Second: #C70039;
     --Third: #F94C10;
     --Fourth: #F8DE22;
+
     --BackGroundColor: white;
+    --FontColor:black;
+    --HoverFontColor:#F94C10;
+
     --ButtonFontColor: rgb(0, 0, 0);
     --HoverButtonFontColor:#F94C10;
     --FontHoverColor: black;
@@ -28,12 +32,20 @@
     background: #F94C10;
   }
 
+  /* Kaydırma çubuğu site içi hızlı değil yumuşak geçmesi için */
 html {
     scroll-behavior: smooth;
   }
-
   
 body{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
     max-width: 100%;
     min-width: 100%;
 
@@ -44,31 +56,153 @@ body{
 
     position: relative;
 
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     overflow-x: hidden;
 }
 
 header{
+    max-width: 80%;
+    min-width: 80%;
+    
+    height: auto;
+    
+    background-color: rgb(111, 111, 111);
     display: flex;
     flex-direction: column;
-    max-width: 100%;
-    min-width: 100%;
+    position: relative;
 }
 
 .topmenu{
+    max-width: 100%;
+    min-width: 100%;
+
+    max-height: 5vh;
+    min-height: 5vh;
+
+    background-color: #900C3F;
     display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content:space-between;
 }
 
 nav{
+    max-width: 100%;
+    min-width: 100%;
+
+    max-height: 15vh;
+    min-height: 15vh;
+
+    background-color: #0c907e;
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-between;
 }
 
 .submenu{
+    max-width: 100%;
+    min-width: 100%;
+
+    max-height: 10vh;
+    min-height: 10vh;
+
+    background-color: #1f0bd1;
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:center;
 }
 
 main{
-    height: 500vh;
+    max-width: 80%;
+    min-width: 80%;
+
+    height: auto;
+}
+
+.deneme{
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.kutu{
+  width: 20%;
+  height: 50vh;
+  transition: all 350ms ease-in-out;
+  cursor: pointer;
+}
+.kutu1{
+  background-color: #0c907e;
+
+}
+.kutu2{
+  background-color: black;
+
+}
+.kutu3{
+  background-color: blue;
+
+}
+.kutu4{
+  background-color: orange;
+
+}
+.kutu5{
+  background-color: yellow;
+
+}
+.kutu1:hover,
+.kutu2:hover,
+.kutu3:hover,
+.kutu4:hover,
+.kutu5:hover{
+  width: 50%;
+}
+
+.gender-card{
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.box{
+  width: 50%;
+  height: 80vh;
+  transition: all 350ms ease-in-out;
+  cursor: pointer;
+}
+
+.box1{
+  background-color: rgb(225, 40, 40);
+
+}
+.box2{
+  background-color: rgb(21, 9, 232);
+
+}
+
+footer{
+    max-width: 80%;
+    min-width: 80%;
+
+    height: 50vh;
+    background-color: aliceblue;
 }
 
 
@@ -84,6 +218,7 @@ main{
     border: 1px solid white;
     box-shadow: 1px 2px 8px gray;
     border-radius: 12px;
+
     outline: none;
     cursor: pointer;
     transition: all 350ms ease;
@@ -95,12 +230,114 @@ main{
     font-size: 12px;
     font-weight: bold;
     color: var(--ButtonFontColor);
+    user-select: none;
   }
   #myBtn:hover {
-    transform: translateY(-15px);
+    transform: translateY(-10px);
     border: 1px solid var(--HoverButtonFontColor);
   }
   #myBtn:hover i,
   #myBtn:hover p{
     color: var(--HoverButtonFontColor);
+  }
+
+
+
+
+  .wrapper {
+    max-width: 100%;
+    position: relative;
+  }
+  
+  .wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  .wrapper i:active{
+    transform: translateY(-50%) scale(0.85);
+  }
+  .wrapper i:first-child{
+    left: -22px;
+  }
+  .wrapper i:last-child{
+    right: -22px;
+  }
+  
+  .wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 6) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    overflow-x: hidden
+  }
+  
+  
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: smooth;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel .card {
+    scroll-snap-align: start;
+    height: 342px;
+    list-style: none;
+    background: #fff;
+    border: 1px rgb(207, 207, 207) solid;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+  
+  
+  
+  @media screen and (max-width: 900px) {
+    .wrapper .carousel {
+      grid-auto-columns: calc((100% / 2) - 9px);
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .wrapper .carousel {
+      grid-auto-columns: 100%;
+    }
+  }
+
+  .opportunity{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .opportunity-box{
+    width: 32%;
+    height: 40vh;
+    background-color: black;
+    margin: 10px  0 10px;
   }
