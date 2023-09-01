@@ -754,7 +754,18 @@ footer .container li a:hover{
   }
 
 
+  /* Mobil uyum için css ayarları */
 @media screen and (max-width: 600px) {
+
+  header{
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  main{
+    max-width: 100%;
+    min-width: 100%;
+}
   .wrapper .carousel {
     grid-auto-columns: 100%;
   }
