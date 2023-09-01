@@ -217,8 +217,14 @@ nav{
 .account .login i,
 .account .basket i{
   margin:0 12px;
-  line-height: 5vh;
+  line-height: 6vh;
+  font-size: 16px;
+}
 
+.account .login span,
+.account .basket span{
+  line-height: 6vh;
+  font-size: 16px;
 }
 
 .account .login:hover,
@@ -539,7 +545,7 @@ main{
   overflow: hidden;
 }
 .carousel .card:hover{
-  box-shadow: 2px 4px 8px rgb(209, 209, 209);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .carousel .card:hover img{
   transform: scale(1.2);
@@ -671,7 +677,7 @@ footer{
     max-width: 100%;
     min-width: 100%;
 
-    height: 40vh;
+    height: auto;
     background-color: #900C3F;
 
     display: flex;
@@ -679,15 +685,16 @@ footer{
     flex-direction: row;
     justify-content: space-around;
     align-items: stretch;
+    padding-bottom: 20vh;
 }
 
 footer .container{
-  width: 15%;
+  width: 23%;
   height: 100%;
 }
 
 footer .container h1{
-  margin-left: 15%;
+margin-left: 10%;
 font-weight: bolder;
 color: white;
 user-select: none;
@@ -716,7 +723,7 @@ footer .container li a:hover{
   background-color: #C70039;
   user-select: none;
 }
-
+#myBtn 
 
 #myBtn {
     display: none;
@@ -754,19 +761,97 @@ footer .container li a:hover{
   }
 
 
-  /* Mobil uyum için css ayarları */
+  /* Mobil uyum için css ayarları 600 piksel*/
 @media screen and (max-width: 600px) {
 
   header{
     max-width: 100%;
     min-width: 100%;
   }
-
+  .topmenu a{
+    font-size: 8px;
+  }
   main{
     max-width: 100%;
     min-width: 100%;
 }
+
+
+
+.account .login i,
+.account .basket i,
+.account .login span,
+.account .basket span{
+  margin: 0;
+  margin-left: 3px;
+  font-size: 8px;
+}
+
+h1{
+  font-size: 24px;
+}
+
+.wrapper {
+  max-width: 90%;
+  width: 90%;
+  margin-left: 5%;
+}
+.carousel .card {
+  height: 500px;
+}
+.carousel .card .img {
+  height: 300px;
+}
+.card .img img {
+  height: 100%;
+}
+
+.carousel .card button{
+  transform: translateY(0);
+  bottom: 10px;
+  }
+  .carousel .card:hover button{
+    transform: translateY(0);
+  }
+  .carousel .card:hover img{
+    transform: scale(1.1);
+  }
+
+  .kutu{
+    height: 40vh;
+  }
+
+
+  .kutu .category{
+    font-size: 16px;
+  }
+
+  .kutu button{
+    width: 40%;
+    font-size: 10px;
+  }
+  .opportunity-box{
+    height: 20vh;
+  }
+
+  .opportunity-box .p p{
+    font-size: 12px;
+  }
+
   .wrapper .carousel {
     grid-auto-columns: 100%;
+  }
+
+  footer .container h1{
+    font-size: 14px;
+    text-align: center;
+  }
+
+  footer .container li a{
+    font-size: 10px;
+  }
+
+  .copyright{
+    font-size: 8px;
   }
 }
